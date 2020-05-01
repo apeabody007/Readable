@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readable</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-</head>
-<body>
-    <!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <title>Readable</title>
   </head>
-  <body>
-​
+  
+  <body> 
+    ​
     <!-- Start Top Bar -->
-    <div class="top-bar">
+    <nav class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text">Marketing Site</li>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
+          <!--I welcome all your reFactor suggestions-->
+          <li class="menu-text">
+            <h4>Readable:
+              <br>the Virtual Bookshelf
+            </h4>
+          </li>
+          <!--create #id links for navigation along page-->
+          <li><a href="#" id="link1">Books I've found to be Readable</a></li>
+          <li><a href="#" id="link2">Books currently being read</a></li>
+          <li><a href="#" id="link3">Books I want to discover as Readable</a></li>
         </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#">Three</a></li>
-          <li><a href="#">Four</a></li>
-          <li><a href="#">Five</a></li>
-          <li><a href="#">Six</a></li>
-        </ul>
-      </div>
-    </div>
+      </div>     
+    </nav>
     <!-- End Top Bar -->
-​
-​
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <!--Create about/contact us-->    ​
+    ​     
+    <script type="text/javascript">
+        //this was an odd div just sitting there with dead images     
+      /*<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
       <ul class="orbit-container">
         <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
         <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
@@ -47,196 +41,144 @@
         </li>
         <li class="orbit-slide">
           <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-      </ul>
-    </div>
-​
-    <div class="row column text-center">
-      <h2>Our Newest Products</h2>
-      <hr>
-    </div>
-​
-    <div class="row small-up-2 large-up-4">
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button expanded">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button expanded">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button expanded">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button expanded">Buy</a>
-      </div>
-    </div>
-​
-    <hr>
-​
-    <div class="row column">
-      <div class="callout primary">
-        <h3>Really big special this week on items.</h3>
-      </div>
-    </div>
-​
-    <hr>
-​
-    <div class="row column text-center">
-      <h2>Some Other Neat Products</h2>
-      <hr>
-    </div>
-​
-    <div class="row small-up-2 medium-up-3 large-up-6">
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>Nulla At Nulla Justo, Eget</h5>
-        <p>$400</p>
-        <a href="#" class="button small expanded hollow">Buy</a>
-      </div>
-    </div>
-​
+            </li>
+            <li class="orbit-slide">  
+              <img src="https://placehold.it/2000x750">
+            </li>
+            <li class="orbit-slide">
+              <img src="https://placehold.it/2000x750">
+            </li>
+          </ul>
+        </div>
+        */
+    </script>
+    
+        ​
+        <!--stylize via bootstrap-->  
+        <!--space main3 divs evenly, addBttn in center of each-->
+        <!--import font-->  
+        <div class="row">              
+              <blockquote class="blockquote text-center">
+                <!--I took some liberty, but its all up for convo-->
+                <p class="mb-0">
+                  "Share & Store all the literature you've found to be Readable.
+                  Let us know which titles you wish to find as Readable.
+                  Definitely let us in on what you're finding Readable at the moment."</p>
+                <footer class="blockquote-footer">
+                  the Readable team
+                </footer>
+              </blockquote>       
+        </div>
+        ​
+        <div class="row small-up-2 large-up-4" >
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>Readable content I've enjoyed</h5>
+            <p>maybe we can target a key within an API upon a "click" event, to populate the book's author [here]</p>
+            <a href="#" class="button expanded">Add to collection</a>            
+        </div>
+
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>A very Readable selection that I'm entralled in at the moment</h5>
+            <p>[author here]</p>
+            <a href="#" class="button expanded">Add to collection</a>
+          </div>
+           
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>Hopefully, these titles will be Readable</h5> 
+            <p>[author here]</p>
+            <a href="#" class="button expanded">Add to collection</a>
+          </div>          
+        </div>
+        ​
+        <hr>
+        ​
+        <div class="row column">
+          <div class="callout primary">
+            <h3>Join our mailing list to receive a FREE-random book added to your collection!</h3>
+          </div>
+        </div>
+        ​
+        <hr>
+        ​
+        <div class="row column text-center">
+          <h2>Suggestions based on user history: (cool idea maybe)</h2>
+          <hr>
+        </div>
+        ​
+        <div class="row small-up-2 medium-up-3 large-up-6">
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>randomized suggestions</h5>
+            <p>author</p>
+            <a href="#" class="button small expanded hollow">add to [select collection]</a>
+          </div>          
+        </div> 
+    ​
     <hr>
     <div class="row">
       <div class="medium-4 columns">
-        <h4>Top Products</h4>
+        </div>
+      </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
+            
           </div>
         </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
-          </div>
-        </div>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
-          </div>
-          <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
       </div>
       <div class="medium-4 columns">
-        <h4>Top Products</h4>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
+            
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
       </div>
       <div class="medium-4 columns">
-        <h4>Top Products</h4>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
         <div class="media-object">
           <div class="media-object-section">
-            <img class="thumbnail" src="https://placehold.it/100x100">
           </div>
           <div class="media-object-section">
-            <h5>Nunc Eu Ullamcorper Orci</h5>
-            <p>Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque.</p>
           </div>
         </div>
       </div>
     </div>
-​
+    ​
     <div class="callout large secondary">
       <div class="row">
         <div class="large-4 columns">
@@ -261,16 +203,19 @@
         </div>
       </div>
     </div>
-​
+    ​
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
-      $(document).foundation();
-    </script>
-  </body>
-</html>
-    <script src="script.js"></script>
+      //$(document).foundation(); //does this apply the framework to our entire app?
+      </script>
+  
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+  
 </body>
-<!--psuedo-->
+</html>
+</body>
+
 
 </html>
