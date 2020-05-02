@@ -1,13 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha3rx4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <title>Readable</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-</head>
-<body>
+  </head>
+  
+  <body> 
+    ​
+    <!-- Start Top Bar -->
+    <nav class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <!--I welcome all your reFactor suggestions-->
+          <li class="menu-text">
+            <h4>Readable:
+              <br>the Virtual Bookshelf
+            </h4>
+          </li>
+          <!--create #id links for navigation along page-->
+          <li><a href="#" id="link1">Books I've found to be Readable</a></li>
+          <li><a href="#" id="link2">Books currently being read</a></li>
+          <li><a href="#" id="link3">Books I want to discover as Readable</a></li>
+        </ul>
+        <div class=“input-group”>
+          <input class=“input-group-field” type=“text”>
+          <div class=“input-group-button”>
+            <input type=“submit” class=“button” value=“Search”>
+          </div>
+        </div>
+      </div>     
+    </nav>
+    <!-- End Top Bar -->
+    <!--Create about/contact us-->    ​
+    ​     
+   
     
-    <script src="script.js"></script>
+        ​
+        <!--stylize via bootstrap-->  
+        <!--space main3 divs evenly, addBttn in center of each-->
+        <!--import font-->  
+        <div class="row">              
+              <blockquote class="blockquote text-center">
+                <!--I took some liberty, but its all up for convo-->
+                <p class="mb-0">
+                  "Share & Store all the literature you've found to be Readable.
+                  Let us know which titles you wish to find as Readable.
+                  Definitely let us in on what you're finding Readable at the moment."</p>
+                <footer class="blockquote-footer">
+                  the Readable team
+                </footer>
+              </blockquote>       
+        </div>
+        ​
+        <div class="row small-up-2 large-up-3" >
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>Books I have read & found Readable</h5>
+            <p>maybe we can target a key within an API upon a "click" event, to populate the book's author [here]</p>
+            <a href="#" class="button expanded">Add to collection</a>            
+        </div>
+
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>Books I am reading & finding Readable</h5>
+            <p>[author here]</p>
+            <a href="#" class="button expanded">Add to collection</a>
+          </div>
+           
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>Books I plan to read</h5> 
+            <p>[author here]</p>
+            <a href="#" class="button expanded">Add to collection</a>
+          </div>          
+        </div>
+        ​
+        <hr>
+        ​
+        <div class="row column">
+          <div class="callout primary">
+            <h3>Join our mailing list to receive a FREE-random book added to your collection!</h3>
+          </div>
+        </div>
+        ​
+        <hr>
+        ​
+        <div class="row column text-center">
+          <h2>Suggestions based on user history: (cool idea maybe)</h2>
+          <hr>
+        </div>
+        ​
+        <div class="row small-up-2 medium-up-3 large-up-6">
+          <div class="column">
+            <img class="thumbnail" src="https://placehold.it/300x400">
+            <h5>randomized suggestions</h5>
+            <p>author</p>
+            <a href="#" class="button small expanded hollow">add to [selected collection]</a>
+          </div>          
+        </div> 
+    ​
+    <hr>
+        ​
+    <!--footer-->
+    <div class="callout large secondary">
+      <div class="row">
+        <div class="large-4 columns">
+          <h5>One book a day, keeps ALS away</h5>
+          <p>Scan our QR code to join our book-club
+             & receive a FREE e-book added to your collection!
+          </p>
+        </div>
+        <div class="large-3 large-offset-2 columns">
+          <ul class="menu vertical">
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">CAREERS</a></li>
+            <li><a href="#">AFFILIATE PROGRAM</a></li>
+          </ul>
+        </div>        
+      </div>
+    </div>
+    ​
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      $(document).foundation(); //does this apply the framework to our entire app?
+      </script>
+  
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+  
 </body>
+</html>
+</body>
+
+
 </html>
