@@ -2,6 +2,10 @@
     margin-top: -24px;
 }
 
+.input-group mb-3 { 
+    width: auto;
+}
+
 li {
     display: inline-block;
 }
