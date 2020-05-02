@@ -1,4 +1,22 @@
+
 .top-bar {
     margin-top: -24px;
 }
 
+.input-group mb-3 { 
+    width: auto;
+}
+
+li {
+    display: inline-block;
+}
+
+.avatar-img {
+    margin: 20px !important;
+}
+
+#user-icon {
+    position: absolute;
+    right:0;
+    top:0;
+}
