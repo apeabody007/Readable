@@ -2,3 +2,16 @@
     margin-top: -24px;
 }
 
+li {
+    display: inline-block;
+}
+
+.avatar-img {
+    margin: 20px !important;
+}
+
+#user-icon {
+    position: absolute;
+    right:0;
+    top:0;
+}
