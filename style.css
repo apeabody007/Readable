@@ -2,3 +2,6 @@
     margin-top: -24px;
 }
 
+.input-group mb-3 { 
+    width: auto;
+}
