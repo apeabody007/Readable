@@ -41,19 +41,38 @@ $(document).ready(function(){
    	  var img = "";
       var title = "";
       var author = "";
+      var divCol = "";
 
    	  $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
 
           for(i=0;i<response.items.length;i++)
           {
-           title=$('<h5 class="center-align">' + response.items[i].volumeInfo.title + '</h5>');  
-           author=$('<h5 class="center-align"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read</button><button id="imagebutton" class="btn">Reading</button><button id="imagebutton" class="btn">Want to Read</button>'); 	
+           divCol = $("<div>");
+           divCol.addClass("column book-div");
+
+           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>');  
+           author=$('<h5 class="book-author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
+           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '>'); 	
            url= response.items[i].volumeInfo.imageLinks.thumbnail;
            img.attr('src', url);
-           title.appendTo('#result');
-           author.appendTo('#result');
-           img.appendTo('#result');
+
+           buttonDiv = $("<div>");
+           button1 = $('<button id="imagebutton" class="btn hollow button">Read</button>');
+           button2 = $('<button id="imagebutton" class="btn hollow button">Reading</button>');
+           button3 = $('<button id="imagebutton" class="btn hollow button">Want to Read</button>');
+           
+           divCol.append(title);
+           divCol.append(author);
+           divCol.append(img);
+           
+           buttonDiv.addClass("read-btns");
+           buttonDiv.append(button1);
+           buttonDiv.append(button2);
+           buttonDiv.append(button3);
+           divCol.append(buttonDiv);
+
+           $("#result").append(divCol);
+
           }
    	  });
       

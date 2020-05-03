@@ -1,3 +1,6 @@
+.column {
+    margin-top: 1em;
+}
 
 .top-bar {
     margin-top: -24px;
@@ -19,4 +22,29 @@ li {
     position: absolute;
     right:0;
     top:0;
+}
+
+/* Book Search Results */
+
+.book-author {
+    font-size: 0.7em;
+    text-align: center;
+}
+
+.book-title {
+    font-size: 1em;
+    text-align: center;
+}
+
+.book-div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.read-btns {
+    display:block;
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
 }
