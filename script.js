@@ -48,7 +48,7 @@ $(document).ready(function(){
           {
            title=$('<h5 class="center-align">' + response.items[i].volumeInfo.title + '</h5>');  
            author=$('<h5 class="center-align"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read More</button>'); 	
+           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read</button><button id="imagebutton" class="btn">Reading</button><button id="imagebutton" class="btn">Want to Read</button>'); 	
            url= response.items[i].volumeInfo.imageLinks.thumbnail;
            img.attr('src', url);
            title.appendTo('#result');
