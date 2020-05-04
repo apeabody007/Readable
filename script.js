@@ -57,9 +57,9 @@ $(document).ready(function(){
            img.attr('src', url);
 
            buttonDiv = $("<div>");
-           button1 = $('<button id="imagebutton" class="btn hollow button">Read</button>');
-           button2 = $('<button id="imagebutton" class="btn hollow button">Reading</button>');
-           button3 = $('<button id="imagebutton" class="btn hollow button">Want to Read</button>');
+           button1 = $('<button status="read" id="imagebutton" class="btn hollow button">Read</button>');
+           button2 = $('<button status="reading" id="imagebutton" class="btn hollow button">Reading</button>');
+           button3 = $('<button status="wantToRead" id="imagebutton" class="btn hollow button">Want to Read</button>');
            
            divCol.append(title);
            divCol.append(author);
