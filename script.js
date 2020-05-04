@@ -1,4 +1,6 @@
-
+var booksIRead=[];
+var booksImReading=[];
+var booksIWantToRead=[];
 //Updates user icon on top right on load
 function updateUserIcon(){
 
@@ -57,9 +59,9 @@ $(document).ready(function(){
            img.attr('src', url);
 
            buttonDiv = $("<div>");
-           button1 = $('<button status="read" id="imagebutton" class="btn hollow button">Read</button>');
-           button2 = $('<button status="reading" id="imagebutton" class="btn hollow button">Reading</button>');
-           button3 = $('<button status="wantToRead" id="imagebutton" class="btn hollow button">Want to Read</button>');
+           button1 = $('<button book="'+response.items[i].volumeInfo.title+'" status="read" id="imagebutton" class="btn hollow button">Read</button>');
+           button2 = $('<button book="'+response.items[i].volumeInfo.title+'" status="reading" id="imagebutton" class="btn hollow button">Reading</button>');
+           button3 = $('<button book="'+response.items[i].volumeInfo.title+'" status="wantToRead" id="imagebutton" class="btn hollow button">Want to Read</button>');
            
            divCol.append(title);
            divCol.append(author);
@@ -73,7 +75,27 @@ $(document).ready(function(){
 
            $("#result").append(divCol);
 
-          }
+          } 
+
+          //event listener for bttns with id img bttn
+           
+          $("#imagebutton").on("click",function() {
+            //grabe book attr from bttn
+            var bookTitle=$(this).attr("book");
+            var status=$(this).attr("status");
+            if(status=="read") {
+                booksIRead.push(bookTitle)
+            } else if(status=="reading") {
+                booksImReading.push(bookTitle)
+            } else if(status=="wantToRead") {
+                booksIWantToRead.push(bookTitle)
+            }
+
+            updateList();
+
+            
+
+          });
    	  });
       
       }
@@ -81,4 +103,6 @@ $(document).ready(function(){
    });
 
 });
+
+
 // RYAN end js function bookSearch
