@@ -22,14 +22,13 @@
             <h5>Readable:<br/>the Virtual Bookshelf</h5>
           </li>
           <!--create #id links for navigation along page-->
-
           <li><a href="Read.html" id="link1">Books I've found to be Readable</a></li>
           <li><a href="BeingRead.html" id="link2">Books currently being read</a></li>
           <li><a href="PlanToRead.html" id="link3">Books I want to discover as Readable</a></li>
-
-         
           <li id="user-icon"><strong>User</strong></li>
         </ul>
+
+
 
 <!-- RYAN start search bar (other half in script.js) -->
 <!-- removed search bar placeholder:
@@ -38,14 +37,7 @@
   <div class=“input-group-button”>
     <input type=“submit” class=“button” value=“Search”> -->
 
-                <form id="myform">
-                  <div class="input-field">
-                    <input type="search" id="books">
-                  </div>
-                  <button class="btn">Search Books</button>
-                </form>
-              </div>
-              
+                
               
 <!-- RYAN end search bar -->
 
@@ -61,40 +53,16 @@
         <!--stylize via bootstrap-->  
         <!--space main3 divs evenly, addBttn in center of each-->
         <!--import font-->  
-        <div class="row">              
-              <blockquote class="blockquote text-center">
-                <!--I took some liberty, but its all up for convo-->
-                <p class="mb-0">
-                  "Share & Store all the literature you've found to be Readable.
-                  Let us know which titles you wish to find as Readable.
-                  Definitely let us in on what you're finding Readable at the moment."</p>
-                <footer class="blockquote-footer">
-                  the Readable team
-                </footer>
-              </blockquote>       
-        </div>
-
-        <div class="row small-up-2 large-up-3" id="result">
-        </div>
-
-        <hr>
-        ​
-        <div class="row small-up-2 large-up-3" >
+        
           <div class="column">
-            <h5>Books I have read & found Readable</h5>
-            <ul id="books-read"></ul>
-        </div>
+            <h5><strong>Books I am reading & finding Readable</strong></h5>
+            <ul id="books-reading">
 
-          <div class="column">
-            <h5>Books I am reading & finding Readable</h5>
-            <ul id="books-reading"></ul>
+            </ul>
+            <a href="#" class="button expanded">Add to collection</a>
           </div>
            
-          <div class="column">
-            <h5>Books I plan to read</h5> 
-            <ul id="books-to-read"></ul>
-          </div>          
-        </div>        ​
+          
                 ​
         <hr>
                 ​
