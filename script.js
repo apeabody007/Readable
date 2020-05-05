@@ -60,6 +60,9 @@ $(document).ready(function(){
       var author = "";
       var divCol = "";
 
+      //empties result div
+      $("#result").empty();
+
    	  $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
 
           for(i=0;i<response.items.length;i++)
@@ -119,7 +122,10 @@ $(document).ready(function(){
             });
 
 
-   	  });
+         });
+         
+         //clears search input
+         $("#books").val("");
       
       }
       return false;
