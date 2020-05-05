@@ -91,3 +91,8 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
+
+#books-read li, #books-reading li, #books-to-read li {
+    width:60%;
+    margin:auto;
+}
