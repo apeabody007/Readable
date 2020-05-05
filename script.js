@@ -80,7 +80,7 @@ $(document).ready(function(){
           //event listener for bttns with id img bttn
            
           $("#imagebutton").on("click",function() {
-            //grabe book attr from bttn
+            //grab book attr from bttn
             var bookTitle=$(this).attr("book");
             var status=$(this).attr("status");
             if(status=="read") {

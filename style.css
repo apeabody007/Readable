@@ -4,7 +4,55 @@
 
 .top-bar {
     margin-top: -24px;
+    opacity: 0.6;
+    background-color: black;
+    color: white;
 }
+
+.readableLogo {
+    width: 200px;
+}
+
+
+#h4 {
+    opacity: 1;
+    color: white;
+}
+
+#books {
+    opacity: 1;
+}
+
+.btn {
+    opacity: 1;
+    color: white;
+}
+
+#link1 {
+    color: white;
+    opacity: 1;
+}
+
+#link2 {
+    color: white;
+    opacity: 1;
+}
+
+#link3 {
+    color: white;
+    opacity: 1;
+}
+
+.avatar-img {
+    margin: 20px !important;
+    opacity: 1;
+}
+        
+#user-icon {
+    position: relative;
+    right:0;
+    top:0;    
+}        
 
 .input-group mb-3 { 
     width: auto;
@@ -12,17 +60,12 @@
 
 li {
     display: inline-block;
+    background-color: black;
 }
 
-.avatar-img {
-    margin: 20px !important;
-}
 
-#user-icon {
-    position: absolute;
-    right:0;
-    top:0;
-}
+
+
 
 /* Book Search Results */
 
