@@ -72,8 +72,12 @@ $(document).ready(function(){
            divCol = $("<div>");
            divCol.addClass("column book-div");
 
-           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>');  
-           author=$('<h5 class="book-author">' + response.items[i].volumeInfo.authors[0] + '</h5>');
+           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>'); 
+           if(response.items[i].volumeInfo.authors != undefined) {
+            author=$('<h5 class="book-author">' + response.items[i].volumeInfo.authors[0] + '</h5>');
+           } else {
+               author = $('<h5 class="book-author">Unknown</h5>');
+           }
            img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '>'); 
            
            //if no thumbnail is available, use a placeholder
