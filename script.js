@@ -1,3 +1,4 @@
+
 var booksIRead=[];
 var booksImReading=[];
 var booksIWantToRead=[];
@@ -50,8 +51,9 @@ updateUserIcon();
 // RYAN start js function bookSearch
 $(document).ready(function(){	
 
-   $("#myform").submit(function(){
+   $("#myform").submit(function(evt){
 
+      evt.preventDefault();
    	  var search = $("#books").val();
    	  if(search == ""){}else{		
    	  var url = "";
