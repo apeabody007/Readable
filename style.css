@@ -1,5 +1,26 @@
+a {
+    color:white;
+}
+
+a:hover {
+    color:white;
+    text-decoration: none;
+}
+
 .column {
     margin-top: 1em;
+}
+
+#h4 {
+    opacity: 1;
+    color: white;
+}
+
+/* NAVIGATION */ 
+
+.navbar-toggler {
+    position: relative;
+    left:-40px;
 }
 
 .top-bar {
@@ -9,35 +30,37 @@
     color: white;
 }
 
+.top-bar ul {
+    background-color: #f690bd;
+}
+
 .readableLogo {
-    width: 200px;
+    width: 100px;
 }
 
-
-#books {
-    opacity: 1;
+.menu li {
+    padding-left: 1.3em;
+    padding-right: 1.3em;
 }
 
-.btn {
-    opacity: 1;
-    color: white;
+.menu-text h5 {
+    display: inline-block;
+    position: relative;
+    top:20px;
 }
 
 .avatar-img {
     margin: 20px !important;
     opacity: 1;
 }
-        
-#user-icon {
-    position: relative; 
-    right:0;
-    top:0;    
-}        
+       
 
-.input-group mb-3 { 
-    width: auto;
+/* HOME PAGE */
+
+#books {
+     opacity: 1;
 }
-
+  
 .navItem {
     background-color: #e3a92b;
 }
@@ -45,12 +68,16 @@
 #link1 li, #link2 li, #link3 li {
     display: inline-block;
     background-color: #80d4c9;
+ }
+
+.btn {
     opacity: 1;
+    color: white;
 }
 
-
-
-
+.input-group mb-3 { 
+    width: auto;
+}
 
 
 /* Book Search Results */
