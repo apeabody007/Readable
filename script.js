@@ -1,3 +1,20 @@
+var booksIRead=[];
+var booksImReading=[];
+var booksIWantToRead=[];
+
+//Checks if lists are saved and if saved, updates the lists on the UI
+if(localStorage.getItem("bookLists") != null && localStorage.getItem("bookLists").length > 0) {
+
+    var savedBookLists = localStorage.getItem("bookLists");
+    savedBookLists = JSON.parse(savedBookLists);
+
+    booksImReading = savedBookLists.booksImReading;
+    booksIRead = savedBookLists.booksIRead;
+    booksIWantToRead = savedBookLists.booksIWantToRead;
+
+    updateLists();
+}
+
 
 //Updates user icon on top right on load
 function updateUserIcon(){
@@ -41,25 +58,178 @@ $(document).ready(function(){
    	  var img = "";
       var title = "";
       var author = "";
+      var divCol = "";
+
+      //empties result div
+      $("#result").empty();
 
    	  $.get("https://www.googleapis.com/books/v1/volumes?q=" + search,function(response){
 
           for(i=0;i<response.items.length;i++)
           {
-           title=$('<h5 class="center-align">' + response.items[i].volumeInfo.title + '</h5>');  
-           author=$('<h5 class="center-align"> By:' + response.items[i].volumeInfo.authors + '</h5>');
-           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton" class="btn">Read</button><button id="imagebutton" class="btn">Reading</button><button id="imagebutton" class="btn">Want to Read</button>'); 	
-           url= response.items[i].volumeInfo.imageLinks.thumbnail;
+           divCol = $("<div>");
+           divCol.addClass("column book-div");
+
+           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>');  
+           author=$('<h5 class="book-author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
+           img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '>'); 
+           
+           //if no thumbnail is available, use a placeholder
+           if(response.items[i].volumeInfo.imageLinks != undefined) {
+            url= response.items[i].volumeInfo.imageLinks.thumbnail;
+            } else {
+                url = "https://via.placeholder.com/150x200";
+            }
            img.attr('src', url);
-           title.appendTo('#result');
-           author.appendTo('#result');
-           img.appendTo('#result');
-          }
-   	  });
+
+           buttonDiv = $("<div>");
+           button1 = $('<button book="'+response.items[i].volumeInfo.title+'" status="read" class="btn hollow button add-btn">Read</button>');
+           button2 = $('<button book="'+response.items[i].volumeInfo.title+'" status="reading" class="btn hollow button add-btn">Reading</button>');
+           button3 = $('<button book="'+response.items[i].volumeInfo.title+'" status="wantToRead" class="btn hollow button add-btn">Want to Read</button>');
+           
+           divCol.append(title);
+           divCol.append(author);
+           divCol.append(img);
+           
+           buttonDiv.addClass("read-btns");
+           buttonDiv.append(button1);
+           buttonDiv.append(button2);
+           buttonDiv.append(button3);
+           divCol.append(buttonDiv);
+
+           $("#result").append(divCol);
+
+          } 
+
+           //event listener for bttns with id img bttn
+                    
+            $(".add-btn").on("click",function() {
+                //grabe book attr from bttn
+                var bookTitle=$(this).attr("book");
+                console.log("title - "+bookTitle);
+                var status=$(this).attr("status");
+                console.log("status - "+status);
+
+                if(status=="read") {
+                    booksIRead.push(bookTitle)
+                } else if(status=="reading") {
+                    booksImReading.push(bookTitle)
+                } else if(status=="wantToRead") {
+                    booksIWantToRead.push(bookTitle)
+                }
+
+                updateLists();
+            });
+
+
+         });
+         
+         //clears search input
+         $("#books").val("");
       
       }
       return false;
    });
 
 });
+
+
+//Update ULs using global variable arrays
+function updateLists() {
+
+    $("#books-read").empty();
+    $("#books-reading").empty();
+    $("#books-to-read").empty();
+
+// add button to each li item/class (below), [DONE]
+//  name each button the name of book (name is string), 
+// THEN call update to list function
+
+    for(var i = 0; i < booksIRead.length; i++) {
+
+        $("#books-read").append("<li>"+booksIRead[i]+"</li>");
+        $('#books-read'). append('<input type="button" value="Delete" class="deleteBooksRead" index="'+i+'" />');
+
+    }
+
+
+    for(var n = 0; n < booksImReading.length; n++) {
+
+        $("#books-reading").append("<li>"+booksImReading[n]+"</li>");
+        $('#books-reading'). append('<input type="button" value="Delete" class="deleteBooksReading" index="'+n+'" />');
+
+    }
+
+
+    for(var k = 0; k < booksIWantToRead.length; k++) {
+
+        $("#books-to-read").append("<li>"+booksIWantToRead[k]+"</li>");
+        $('#books-to-read'). append('<input type="button" value="Delete" class="deleteBooksIWantToRead" index="'+k+'" />');
+
+    }
+
+    $(".deleteBooksRead").on("click",deleteBook);
+
+    $(".deleteBooksReading").on("click",deleteBook);
+
+    $(".deleteBooksIWantToRead").on("click",deleteBook);
+    //creating data object of lists to save to local storage    
+    var listObj = {};
+    listObj.booksIRead = booksIRead;
+    listObj.booksIWantToRead = booksIWantToRead;
+    listObj.booksImReading = booksImReading;
+
+    //saving object to local storage
+    localStorage.setItem("bookLists", JSON.stringify(listObj));
+
+}
+
 // RYAN end js function bookSearch
+
+//Checks if value is already added to array. If yes, return false. If city is new, return true.
+function isDuplicate(value, array) {
+
+    var check = array.filter(function(n) {
+        return n == value;
+    });
+
+    if(check != null && check.length > 0) {
+        return true;
+    }else {
+        return false;
+    }
+    
+}
+
+// (RYAN) Event Listeners for Delete buttons 
+//event listener for bttns with id img bttn
+
+function deleteBook(){
+
+    var index=$(this).attr("index");
+
+    var className=$(this).attr("class");
+    if(className == "deleteBooksRead"){
+        console.log(booksIRead)
+        booksIRead.splice(index,1);
+        console.log(index)
+
+    }else if(className == "deleteBooksReading"){
+        booksImReading.splice(index,1);
+
+    }else if(className == "deleteBooksIWantToRead"){
+        booksIWantToRead.splice(index,1);
+    }
+
+    var listObj = {};
+    listObj.booksIRead = booksIRead;
+    listObj.booksIWantToRead = booksIWantToRead;
+    listObj.booksImReading = booksImReading;
+
+    //saving object to local storage
+    localStorage.setItem("bookLists", JSON.stringify(listObj));
+    updateLists()
+}
+                    
+
+        
