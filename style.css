@@ -5,7 +5,7 @@
 .top-bar {
     margin-top: -24px;
     opacity: 0.6;
-    background-color: #f690bd;
+    background-color: #e3a92b;
     color: white;
 }
 
@@ -14,11 +14,6 @@
 }
 
 
-#h4 {
-    opacity: 1;
-    color: white;
-}
-
 #books {
     opacity: 1;
 }
@@ -26,21 +21,6 @@
 .btn {
     opacity: 1;
     color: white;
-}
-
-#link1 {
-    color: white;
-    opacity: 1;
-}
-
-#link2 {
-    color: white;
-    opacity: 1;
-}
-
-#link3 {
-    color: white;
-    opacity: 1;
 }
 
 .avatar-img {
@@ -58,10 +38,16 @@
     width: auto;
 }
 
-li {
-    display: inline-block;
-    background-color: #f690bd;
+.navItem {
+    background-color: #e3a92b;
 }
+
+#link1 li, #link2 li, #link3 li {
+    display: inline-block;
+    background-color: #80d4c9;
+    opacity: 1;
+}
+
 
 
 
