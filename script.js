@@ -16,6 +16,24 @@ if(localStorage.getItem("bookLists") != null && localStorage.getItem("bookLists"
 }
 
 
+var booksIRead=[];
+var booksImReading=[];
+var booksIWantToRead=[];
+
+//Checks if lists are saved and if saved, updates the lists on the UI
+if(localStorage.getItem("bookLists") != null && localStorage.getItem("bookLists").length > 0) {
+
+    var savedBookLists = localStorage.getItem("bookLists");
+    savedBookLists = JSON.parse(savedBookLists);
+
+    booksImReading = savedBookLists.booksImReading;
+    booksIRead = savedBookLists.booksIRead;
+    booksIWantToRead = savedBookLists.booksIWantToRead;
+
+    updateLists();
+}
+
+
 //Updates user icon on top right on load
 function updateUserIcon(){
 
@@ -50,8 +68,9 @@ updateUserIcon();
 // RYAN start js function bookSearch
 $(document).ready(function(){	
 
-   $("#myform").submit(function(){
+   $("#myform").submit(function(evt){
 
+      evt.preventDefault();
    	  var search = $("#books").val();
    	  if(search == ""){}else{		
    	  var url = "";
@@ -70,8 +89,12 @@ $(document).ready(function(){
            divCol = $("<div>");
            divCol.addClass("column book-div");
 
-           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>');  
-           author=$('<h5 class="book-author"> By:' + response.items[i].volumeInfo.authors + '</h5>');
+           title=$('<h5 class="book-title"><strong>' + response.items[i].volumeInfo.title + '</strong></h5>'); 
+           if(response.items[i].volumeInfo.authors != undefined) {
+            author=$('<h5 class="book-author">' + response.items[i].volumeInfo.authors[0] + '</h5>');
+           } else {
+               author = $('<h5 class="book-author">Unknown</h5>');
+           }
            img = $('<img class="aligning card z-depth-5" id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '>'); 
            
            //if no thumbnail is available, use a placeholder
@@ -173,6 +196,7 @@ function updateLists() {
     $(".deleteBooksReading").on("click",deleteBook);
 
     $(".deleteBooksIWantToRead").on("click",deleteBook);
+
     //creating data object of lists to save to local storage    
     var listObj = {};
     listObj.booksIRead = booksIRead;
@@ -230,6 +254,3 @@ function deleteBook(){
     localStorage.setItem("bookLists", JSON.stringify(listObj));
     updateLists()
 }
-                    
-
-        
