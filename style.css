@@ -26,7 +26,7 @@ a:hover {
 .top-bar {
     margin-top: -24px;
     opacity: 0.6;
-    background-color: #f690bd;
+    background-color: #e3a92b;
     color: white;
 }
 
@@ -49,21 +49,6 @@ a:hover {
     top:20px;
 }
 
-#link1 {
-    color: white;
-    opacity: 1;
-}
-
-#link2 {
-    color: white;
-    opacity: 1;
-}
-
-#link3 {
-    color: white;
-    opacity: 1;
-}
-
 .avatar-img {
     margin: 20px !important;
     opacity: 1;
@@ -73,8 +58,17 @@ a:hover {
 /* HOME PAGE */
 
 #books {
-    opacity: 1;
+     opacity: 1;
 }
+  
+.navItem {
+    background-color: #e3a92b;
+}
+
+#link1 li, #link2 li, #link3 li {
+    display: inline-block;
+    background-color: #80d4c9;
+ }
 
 .btn {
     opacity: 1;
@@ -84,6 +78,7 @@ a:hover {
 .input-group mb-3 { 
     width: auto;
 }
+
 
 /* Book Search Results */
 
