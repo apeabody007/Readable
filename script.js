@@ -1,3 +1,20 @@
+var booksIRead=[];
+var booksImReading=[];
+var booksIWantToRead=[];
+
+//Checks if lists are saved and if saved, updates the lists on the UI
+if(localStorage.getItem("bookLists") != null && localStorage.getItem("bookLists").length > 0) {
+
+    var savedBookLists = localStorage.getItem("bookLists");
+    savedBookLists = JSON.parse(savedBookLists);
+
+    booksImReading = savedBookLists.booksImReading;
+    booksIRead = savedBookLists.booksIRead;
+    booksIWantToRead = savedBookLists.booksIWantToRead;
+
+    updateLists();
+}
+
 
 var booksIRead=[];
 var booksImReading=[];
@@ -147,10 +164,14 @@ function updateLists() {
     $("#books-reading").empty();
     $("#books-to-read").empty();
 
+// add button to each li item/class (below), [DONE]
+//  name each button the name of book (name is string), 
+// THEN call update to list function
 
     for(var i = 0; i < booksIRead.length; i++) {
 
         $("#books-read").append("<li>"+booksIRead[i]+"</li>");
+        $('#books-read'). append('<input type="button" value="Delete" class="deleteBooksRead" index="'+i+'" />');
 
     }
 
@@ -158,6 +179,7 @@ function updateLists() {
     for(var n = 0; n < booksImReading.length; n++) {
 
         $("#books-reading").append("<li>"+booksImReading[n]+"</li>");
+        $('#books-reading'). append('<input type="button" value="Delete" class="deleteBooksReading" index="'+n+'" />');
 
     }
 
@@ -165,8 +187,15 @@ function updateLists() {
     for(var k = 0; k < booksIWantToRead.length; k++) {
 
         $("#books-to-read").append("<li>"+booksIWantToRead[k]+"</li>");
+        $('#books-to-read'). append('<input type="button" value="Delete" class="deleteBooksIWantToRead" index="'+k+'" />');
 
     }
+
+    $(".deleteBooksRead").on("click",deleteBook);
+
+    $(".deleteBooksReading").on("click",deleteBook);
+
+    $(".deleteBooksIWantToRead").on("click",deleteBook);
 
     //creating data object of lists to save to local storage    
     var listObj = {};
@@ -194,4 +223,34 @@ function isDuplicate(value, array) {
         return false;
     }
     
+}
+
+// (RYAN) Event Listeners for Delete buttons 
+//event listener for bttns with id img bttn
+
+function deleteBook(){
+
+    var index=$(this).attr("index");
+
+    var className=$(this).attr("class");
+    if(className == "deleteBooksRead"){
+        console.log(booksIRead)
+        booksIRead.splice(index,1);
+        console.log(index)
+
+    }else if(className == "deleteBooksReading"){
+        booksImReading.splice(index,1);
+
+    }else if(className == "deleteBooksIWantToRead"){
+        booksIWantToRead.splice(index,1);
+    }
+
+    var listObj = {};
+    listObj.booksIRead = booksIRead;
+    listObj.booksIWantToRead = booksIWantToRead;
+    listObj.booksImReading = booksImReading;
+
+    //saving object to local storage
+    localStorage.setItem("bookLists", JSON.stringify(listObj));
+    updateLists()
 }

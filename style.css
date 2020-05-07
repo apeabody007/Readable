@@ -1,3 +1,4 @@
+
 a {
     color:white;
 }
@@ -23,12 +24,20 @@ a:hover {
     left:-40px;
 }
 
+
 .top-bar {
     margin-top: -24px;
     opacity: 0.6;
+
     background-color: #e3a92b;
     color: white;
 }
+        
+#user-icon {
+    position: relative; 
+    right:0;
+    top:0;    
+}        
 
 .top-bar ul {
     background-color: #f690bd;
@@ -45,6 +54,7 @@ a:hover {
 
 .menu-text h5 {
     display: inline-block;
+
     position: relative;
     top:20px;
 }
