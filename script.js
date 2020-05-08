@@ -99,7 +99,7 @@ $(document).ready(function(){
            
            //if no thumbnail is available, use a placeholder
            if(response.items[i].volumeInfo.imageLinks != undefined) {
-            url= response.items[i].volumeInfo.imageLinks.thumbnail.replace("http://","https://");
+            url= response.items[i].volumeInfo.imageLinks.thumbnail.replace("http","https");
             } else {
                 url = "https://via.placeholder.com/150x200";
             }
