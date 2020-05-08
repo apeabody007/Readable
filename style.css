@@ -11,7 +11,7 @@ a:hover {
     margin-top: 1em;
 }
 
-#h4 {
+p {
     opacity: 1;
     color: white;
 }
@@ -26,16 +26,17 @@ a:hover {
 .top-bar {
     margin-top: -24px;
     opacity: 0.6;
-    background-color: #e3a92b;
+    background-color: #36928c;
     color: white;
 }
 
 .top-bar ul {
-    background-color: #f690bd;
+    background-color:#084fcd;
 }
 
 .readableLogo {
-    width: 100px;
+    width: 150px;
+    opacity: 1;
 }
 
 .menu li {
@@ -62,12 +63,13 @@ a:hover {
 }
   
 .navItem {
-    background-color: #e3a92b;
+    background-color: #36928c;
+    font-family: 'Lobster', cursive;
 }
 
 #link1 li, #link2 li, #link3 li {
     display: inline-block;
-    background-color: #80d4c9;
+    background-color: #36928c;    
  }
 
 .btn {
