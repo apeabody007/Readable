@@ -177,7 +177,7 @@ function updateLists() {
 
         var colDiv1 = $("<div>");
         colDiv1.addClass("col-6");
-        colDiv1.html("<p>"+booksImReading[i]+"</p>");
+        colDiv1.html("<p>"+booksIRead[i]+"</p>");
 
         var colDiv2 = $("<div>");
         colDiv2.addClass("col-6");
