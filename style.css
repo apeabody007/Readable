@@ -23,6 +23,10 @@ h5 {
 
 /* NAVIGATION */ 
 
+.navbar-dark li a {
+    color: white !important;
+}
+
 .navbar-toggler {
     position: relative;
     left:-40px;
