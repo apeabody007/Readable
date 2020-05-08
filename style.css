@@ -17,6 +17,10 @@ a:hover {
     color: white;
 }
 
+h5 {
+    margin-bottom: 1em;
+}
+
 /* NAVIGATION */ 
 
 .navbar-toggler {
@@ -116,6 +120,15 @@ a:hover {
 }
 
 #books-read li, #books-reading li, #books-to-read li {
-    width:60%;
-    margin:auto;
+    list-style: none;
+    max-width:400px !important;
+    margin: auto;
+}
+
+
+#books-read input, #books-reading input, #books-to-read input {
+    background-color: red;
+    color:white;
+    padding: 0.5em;
+    border: none;
 }

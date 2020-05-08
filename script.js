@@ -170,24 +170,66 @@ function updateLists() {
 
     for(var i = 0; i < booksIRead.length; i++) {
 
-        $("#books-read").append("<li>"+booksIRead[i]+"</li>");
-        $('#books-read'). append('<input type="button" value="Delete" class="deleteBooksRead" index="'+i+'" />');
+        var li = $("<li>");
+        var divRow = $("<div>");
+        divRow.addClass("row");
+        
+
+        var colDiv1 = $("<div>");
+        colDiv1.addClass("col-6");
+        colDiv1.html("<p>"+booksImReading[i]+"</p>");
+
+        var colDiv2 = $("<div>");
+        colDiv2.addClass("col-6");
+        colDiv2.html('<input type="button" value="Delete" class="deleteBooksRead" index="'+i+'" />');
+
+        divRow.append(colDiv1, colDiv2);
+        li.append(divRow);
+        $("#books-read").append(li);
 
     }
 
 
     for(var n = 0; n < booksImReading.length; n++) {
 
-        $("#books-reading").append("<li>"+booksImReading[n]+"</li>");
-        $('#books-reading'). append('<input type="button" value="Delete" class="deleteBooksReading" index="'+n+'" />');
+        var li = $("<li>");
+        var divRow = $("<div>");
+        divRow.addClass("row");
+        
+
+        var colDiv1 = $("<div>");
+        colDiv1.addClass("col-6");
+        colDiv1.html("<p>"+booksImReading[n]+"</p>");
+
+        var colDiv2 = $("<div>");
+        colDiv2.addClass("col-6");
+        colDiv2.html('<input type="button" value="Delete" class="deleteBooksReading" index="'+n+'" />');
+
+        divRow.append(colDiv1, colDiv2);
+        li.append(divRow);
+        $("#books-reading").append(li);
 
     }
 
 
     for(var k = 0; k < booksIWantToRead.length; k++) {
 
-        $("#books-to-read").append("<li>"+booksIWantToRead[k]+"</li>");
-        $('#books-to-read'). append('<input type="button" value="Delete" class="deleteBooksIWantToRead" index="'+k+'" />');
+        var li = $("<li>");
+        var divRow = $("<div>");
+        divRow.addClass("row");
+        
+
+        var colDiv1 = $("<div>");
+        colDiv1.addClass("col-6");
+        colDiv1.html("<p>"+booksIWantToRead[k]+"</p>");
+
+        var colDiv2 = $("<div>");
+        colDiv2.addClass("col-6");
+        colDiv2.html('<input type="button" value="Delete" class="deleteBooksIWantToRead" index="'+k+'" />');
+
+        divRow.append(colDiv1, colDiv2);
+        li.append(divRow);
+        $('#books-to-read').append(li);
 
     }
 
