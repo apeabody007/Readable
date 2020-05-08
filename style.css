@@ -19,6 +19,7 @@ a:hover {
 
 h5 {
     margin-bottom: 1em;
+    margin-top: 0.5em;
 }
 
 /* NAVIGATION */ 
@@ -36,7 +37,6 @@ h5 {
 .top-bar {
     margin-top: -24px;
     opacity: 0.6;
-
     background-color: #e3a92b;
     color: white;
 }
@@ -62,7 +62,6 @@ h5 {
 
 .menu-text h5 {
     display: inline-block;
-
     position: relative;
     top:20px;
 }
@@ -135,4 +134,16 @@ h5 {
     color:white;
     padding: 0.5em;
     border: none;
+}
+
+/* FOOTER */
+
+.footer {
+    position: absolute;
+    bottom:0;
+}
+
+.index-footer {
+    position: relative;
+    top:0;
 }
